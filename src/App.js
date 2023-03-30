@@ -1,12 +1,18 @@
 import "./App.css";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <h1>Autumn-Deligate</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/register" element={<h1>Register</h1>} />
+      </Routes>
+    </Router>
   );
 }
 
