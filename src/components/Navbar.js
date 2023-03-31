@@ -19,6 +19,9 @@ const Navbar = () => {
     <StyledNavbar extendNavbar={extendNavbar}>
       <InnerStyledNavbar>
         <LeftContainer>
+          <h1>Logo</h1>
+        </LeftContainer>
+        <RightContainer>
           <NavbarLinkContainer>
             <NavbarLink to="/">Home</NavbarLink>
             <NavbarLink to="/about">About</NavbarLink>
@@ -28,9 +31,6 @@ const Navbar = () => {
               {extendNavbar ? <>&#10005;</> : <>&#8801;</>}
             </OpenLinksButton>
           </NavbarLinkContainer>
-        </LeftContainer>
-        <RightContainer>
-          <h1>Logo</h1>
         </RightContainer>
       </InnerStyledNavbar>
       {extendNavbar && (

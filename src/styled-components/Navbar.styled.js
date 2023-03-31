@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
-  width: 100%;
-  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
+  height: ${(props) => (props.extendNavbar ? "50%" : "80px")};
   background-color: #000;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   @media (min-width: 700px) {
     height: 80px;
@@ -14,32 +14,32 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const LeftContainer = styled.div`
-  flex: 70%;
   display: flex;
-  align-items: center;
-  padding-left: 5%;
-`;
-
-export const RightContainer = styled.div`
-  flex: 30%;
-  display: flex;
-  align-items: flex-end;
   justify-content: center;
   padding-right: 50px;
 
   h1 {
     color: white;
+    margin: auto 20px;
   }
+`;
+
+export const RightContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
 `;
 
 export const InnerStyledNavbar = styled.div`
   width: 100%;
   height: 80px;
   display: flex;
+  justify-content: space-between;
 `;
 
 export const NavbarLinkContainer = styled.div`
   display: flex;
+  margin-right: 20px;
 `;
 
 export const NavbarLink = styled(Link)`
