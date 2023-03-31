@@ -6,6 +6,8 @@ import {
   InnerStyledNavbar,
   ExtendStyledNavbar,
   NavbarLinkContainer,
+  NavbarLink,
+  OpenLinksButton,
 } from "../styled-components/Navbar.styled";
 import { Link } from "react-router-dom";
 
@@ -15,13 +17,16 @@ const Navbar = () => {
       <InnerStyledNavbar>
         <LeftContainer>
           <NavbarLinkContainer>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <NavbarLink to="/">Home</NavbarLink>
+            <NavbarLink to="/about">About</NavbarLink>
+            <NavbarLink to="/login">Login</NavbarLink>
+            <NavbarLink to="/register">Register</NavbarLink>
+            <OpenLinksButton>&#8801;</OpenLinksButton>
           </NavbarLinkContainer>
         </LeftContainer>
-        <RightContainer></RightContainer>
+        <RightContainer>
+          <h1>Logo</h1>
+        </RightContainer>
       </InnerStyledNavbar>
       <ExtendStyledNavbar></ExtendStyledNavbar>
     </StyledNavbar>
