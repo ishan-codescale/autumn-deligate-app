@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
   width: 100%;
-  height: 80px;
+  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -55,6 +55,19 @@ export const NavbarLink = styled(Link)`
   }
 `;
 
+export const NavbarLinkExtend = styled(Link)`
+  color: white;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin: 10px;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    color: orange;
+  }
+`;
+
 export const OpenLinksButton = styled.button`
   width: 70px;
   height: 50px;
@@ -69,4 +82,12 @@ export const OpenLinksButton = styled.button`
   }
 `;
 
-export const ExtendStyledNavbar = styled.div``;
+export const ExtendStyledNavbar = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
