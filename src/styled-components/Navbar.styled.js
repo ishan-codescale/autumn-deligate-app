@@ -7,6 +7,10 @@ export const StyledNavbar = styled.nav`
   background-color: #000;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 700px) {
+    height: 80px;
+  }
 `;
 
 export const LeftContainer = styled.div`
