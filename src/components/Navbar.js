@@ -10,7 +10,6 @@ import {
   OpenLinksButton,
   NavbarLinkExtend,
 } from "../styled-components/Navbar.styled";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
