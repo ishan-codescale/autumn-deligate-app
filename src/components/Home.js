@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  PostCardListWrapper,
-  PostCardStyled,
-} from "../styled-components/PostCard.styled";
-import { PostCard } from "./PostCard";
+import { PostCardListWrapper } from "../styled-components/PostCard.styled";
 import { PostCardList } from "./PostCardList";
 import { useState } from "react";
+import { AddPost } from "./AddPost";
 
 export const Home = () => {
   const [posts, setPosts] = useState([
@@ -32,9 +29,15 @@ export const Home = () => {
     },
   ]);
 
+  const addPost = (post) => {
+    const newPost = post;
+    setPosts([...posts, newPost]);
+  };
+
   return (
     <>
       <PostCardListWrapper>
+        <AddPost onAdd={addPost} />
         <PostCardList posts={posts} />
       </PostCardListWrapper>
     </>

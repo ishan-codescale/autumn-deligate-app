@@ -5,7 +5,7 @@ export const PostCardListWrapper = styled.div`
   width: 1200px;
   justify-content: center;
   align-items: center;
-  padding: 150px 20px;
+  padding: 40px 20px;
   background-image: linear-gradient(gray, white);
   margin: 0 auto;
 `;

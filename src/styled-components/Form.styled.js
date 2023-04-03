@@ -31,9 +31,9 @@ export const StyledFormWrapper = styled.div`
 
 export const StyledForm = styled.form`
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   padding: 40px;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 10px;
   border: 1px solid #333;
   box-sizing: border-box;
@@ -53,6 +53,20 @@ export const StyledButton = styled.button`
   background-color: #f7797d;
   color: #000;
   font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+`;
+
+export const StyledAddButton = styled.button`
+  display: block;
+  width: 150px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
   border: none;
   border-radius: 5px;
   height: 40px;
