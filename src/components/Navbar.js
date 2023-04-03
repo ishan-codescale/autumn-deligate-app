@@ -13,6 +13,8 @@ import {
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
+  const activeLink = "active-link";
+  const normalLink = "normal-link";
 
   return (
     <StyledNavbar extendNavbar={extendNavbar}>
@@ -22,10 +24,18 @@ const Navbar = () => {
         </LeftContainer>
         <RightContainer>
           <NavbarLinkContainer>
-            <NavbarLink to="/">Home</NavbarLink>
-            <NavbarLink to="/about">About</NavbarLink>
-            <NavbarLink to="/login">Login</NavbarLink>
-            <NavbarLink to="/register">Register</NavbarLink>
+            <NavbarLink className="nav-link" to="/">
+              Home
+            </NavbarLink>
+            <NavbarLink className="nav-link" to="/about">
+              About
+            </NavbarLink>
+            <NavbarLink className="nav-link" to="/login">
+              Login
+            </NavbarLink>
+            <NavbarLink className="nav-link" to="/register">
+              Register
+            </NavbarLink>
             <OpenLinksButton onClick={() => setExtendNavbar((curr) => !curr)}>
               {extendNavbar ? <>&#10005;</> : <>&#8801;</>}
             </OpenLinksButton>

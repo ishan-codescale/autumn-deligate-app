@@ -7,8 +7,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #f05053, #e1eec3);
-    height: 100%;
     margin: 0;
     color: #555;
   }
@@ -28,7 +26,6 @@ export const StyledFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   padding: 150px 20px;
 `;
 
@@ -38,6 +35,7 @@ export const StyledForm = styled.form`
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
+  border: 1px solid #333;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;

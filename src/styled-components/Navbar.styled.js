@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
@@ -16,7 +16,7 @@ export const StyledNavbar = styled.nav`
 export const LeftContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-right: 50px;
+  margin-left: 50px;
 
   h1 {
     color: white;
@@ -27,7 +27,7 @@ export const LeftContainer = styled.div`
 export const RightContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 5%;
+  margin-right: 50px;
 `;
 
 export const InnerStyledNavbar = styled.div`
@@ -42,8 +42,7 @@ export const NavbarLinkContainer = styled.div`
   margin-right: 20px;
 `;
 
-export const NavbarLink = styled(Link)`
-  color: white;
+export const NavbarLink = styled(NavLink)`
   font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
@@ -59,7 +58,7 @@ export const NavbarLink = styled(Link)`
   }
 `;
 
-export const NavbarLinkExtend = styled(Link)`
+export const NavbarLinkExtend = styled(NavLink)`
   color: white;
   font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
