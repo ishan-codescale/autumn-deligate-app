@@ -19,7 +19,7 @@ export const AddPost = ({ onAdd }) => {
     const post = {
       name: postName,
       description: postDescription,
-      date: new Date(),
+      date: new Date().now(),
     };
 
     onAdd(post);

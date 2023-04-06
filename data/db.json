@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "sample post - 1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit sint dolorem beatae, tempora rem dignissimos natus adipisci ad voluptatibus!",
+      "date": "2022-12-15"
+    },
+    {
+      "id": 2,
+      "name": "sample post - 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit sint dolorem beatae, tempora rem dignissimos natus adipisci ad voluptatibus!",
+      "date": "2022-12-15"
+    },
+    {
+      "id": 3,
+      "name": "sample post - 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit sint dolorem beatae, tempora rem dignissimos natus adipisci ad voluptatibus!",
+      "date": "2022-12-15"
+    },
+    {
+      "name": "sample post - 4",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit sint dolorem beatae, tempora rem dignissimos natus adipisci ad voluptatibus!",
+      "date": "2023-04-06T10:13:08.877Z",
+      "id": 4
+    }
+  ]
+}
