@@ -8,6 +8,7 @@ import { useState } from "react";
 export const AddPost = ({ onAdd }) => {
   const [postName, setPostName] = useState("");
   const [postDescription, setPostDescription] = useState("");
+  const [postdate, setPostDate] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +16,13 @@ export const AddPost = ({ onAdd }) => {
       alert("Please add a name");
     }
 
-    onAdd({ postName, postDescription });
+    const post = {
+      name: postName,
+      description: postDescription,
+      date: new Date(),
+    };
+
+    onAdd(post);
     setPostName("");
     setPostDescription("");
   };

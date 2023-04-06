@@ -3,6 +3,7 @@ import { PostCardListWrapper } from "../styled-components/PostCard.styled";
 import { PostCardList } from "./PostCardList";
 import { useState } from "react";
 import { AddPost } from "./AddPost";
+import { StyledAddPostButton } from "../styled-components/Form.styled";
 
 export const Home = () => {
   const [posts, setPosts] = useState([
@@ -29,15 +30,29 @@ export const Home = () => {
     },
   ]);
 
+  const [viewAddPost, setViewAddPost] = useState(false);
+
   const addPost = (post) => {
-    const newPost = post;
-    setPosts([...posts, newPost]);
+    setPosts([
+      ...posts,
+      {
+        id: Math.floor(Math.random() * 10),
+        name: post.name,
+        description: post.description,
+        date: post.date,
+      },
+    ]);
   };
 
   return (
     <>
       <PostCardListWrapper>
-        <AddPost onAdd={addPost} />
+        <StyledAddPostButton
+          style={{ backgroundColor: viewAddPost ? "brown" : "" }}
+          onClick={() => setViewAddPost(!viewAddPost)}>
+          {viewAddPost ? "Close" : "Add Post"}
+        </StyledAddPostButton>
+        {viewAddPost && <AddPost onAdd={addPost} />}
         <PostCardList posts={posts} />
       </PostCardListWrapper>
     </>

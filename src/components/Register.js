@@ -6,7 +6,6 @@ import {
   StyledInput,
   StyledButton,
   StyledError,
-  SharedStyle,
 } from "../styled-components/Form.styled";
 
 const Register = () => {
