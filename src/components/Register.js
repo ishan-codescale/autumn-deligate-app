@@ -12,6 +12,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const REGISTER_URL = process.env.REACT_APP_REGISTER_URL;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -22,6 +24,16 @@ const Register = () => {
 
     if (!email || !password) {
       alert("Please provide email and password");
+    } else {
+      fetch(`${REGISTER_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }).then(() => {
+        alert("New user has registered");
+      });
     }
   };
 
