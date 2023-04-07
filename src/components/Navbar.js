@@ -13,8 +13,6 @@ import {
 
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
-  const activeLink = "active-link";
-  const normalLink = "normal-link";
 
   return (
     <StyledNavbar extendNavbar={extendNavbar}>

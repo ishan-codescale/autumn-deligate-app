@@ -14,7 +14,15 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+
+    const user = {
+      email,
+      password,
+    };
+
+    if (!email || !password) {
+      alert("Please provide email and password");
+    }
   };
 
   return (

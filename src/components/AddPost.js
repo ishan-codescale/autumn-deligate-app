@@ -4,27 +4,29 @@ import {
   StyledForm,
 } from "../styled-components/Form.styled";
 import { useState } from "react";
+import dateFormat from "dateformat";
 
 export const AddPost = ({ onAdd }) => {
   const [postName, setPostName] = useState("");
   const [postDescription, setPostDescription] = useState("");
-  const [postdate, setPostDate] = useState("");
+  // const [postdate, setPostDate] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!postName) {
-      alert("Please add a name");
-    }
 
     const post = {
       name: postName,
       description: postDescription,
-      date: new Date().now(),
+      date: dateFormat(new Date(), "yyyy-mm-dd"),
     };
 
-    onAdd(post);
-    setPostName("");
-    setPostDescription("");
+    if (!postName) {
+      alert("Please add a name");
+    } else {
+      onAdd(post);
+      setPostName("");
+      setPostDescription("");
+    }
   };
 
   return (

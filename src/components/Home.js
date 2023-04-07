@@ -7,11 +7,13 @@ import { StyledAddPostButton } from "../styled-components/Form.styled";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
-
   const [viewAddPost, setViewAddPost] = useState(false);
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+  // ADD NEW POST
   const addPost = async (post) => {
-    const res = await fetch("http://localhost:8000/posts", {
+    const res = await fetch(`${BASE_URL}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -19,20 +21,22 @@ export const Home = () => {
       body: JSON.stringify(post),
     });
 
-    const data = res.json();
+    const data = await res.json();
 
     setPosts([...posts, data]);
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
+  // FETCH POSTS
   const fetchPosts = async () => {
-    const response = await fetch("http://localhost:8000/posts");
+    const response = await fetch(`${BASE_URL}`);
     const data = await response.json();
     setPosts(data);
   };
+
+  useEffect(() => {
+    fetchPosts();
+    console.log(process.env.BASE_URL);
+  });
 
   return (
     <>
