@@ -5,12 +5,14 @@ import {
   StyledForm,
   StyledInput,
   StyledButton,
-  StyledError,
 } from "../styled-components/Form.styled";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const REGISTER_URL = process.env.REACT_APP_REGISTER_URL;
 
@@ -31,10 +33,17 @@ const Register = () => {
           "Content-type": "application/json",
         },
         body: JSON.stringify(user),
-      }).then(() => {
-        alert("New user has registered");
-      });
+      })
+        .then(() => {
+          alert("New user has registered");
+          navigate("/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -57,9 +66,6 @@ const Register = () => {
             type="password"
             name="password"
           />
-          <StyledError>
-            <p>Error</p>
-          </StyledError>
           <StyledButton type="submit">Register</StyledButton>
         </StyledForm>
       </StyledFormWrapper>
