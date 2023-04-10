@@ -7,6 +7,7 @@ export const StyledNavbar = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 100%;
 
   @media (min-width: 700px) {
     height: 80px;
@@ -15,7 +16,7 @@ export const StyledNavbar = styled.nav`
 
 export const LeftContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-left: 50px;
 
   h1 {
@@ -81,7 +82,7 @@ export const OpenLinksButton = styled.button`
   cursor: pointer;
 
   @media (min-width: 768px) {
-    display: none;
+    display: Block;
   }
 `;
 
@@ -91,6 +92,6 @@ export const ExtendStyledNavbar = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    display: none;
+    display: block;
   }
 `;

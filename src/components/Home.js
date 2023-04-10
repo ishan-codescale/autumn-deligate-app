@@ -36,7 +36,7 @@ export const Home = () => {
   useEffect(() => {
     fetchPosts();
     console.log(process.env.BASE_URL);
-  }, []);
+  });
 
   return (
     <>

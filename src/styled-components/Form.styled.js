@@ -88,6 +88,19 @@ export const StyledAddPostButton = styled.button`
   margin: 15px;
 `;
 
+export const StyledRegisterButton = styled.button`
+  display: flex;
+  background-color: #247;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 15px;
+`;
+
 // export const StyledFieldSet = styled.fieldset``;
 
 export const StyledError = styled.div`

@@ -1,19 +1,9 @@
 {
   "user": [
     {
-      "email": "isabellatanya1@gmail.com",
-      "password": "1234",
-      "id": 1
-    },
-    {
-      "email": "kshenukametals@gmail.com",
-      "password": "123456",
-      "id": 2
-    },
-    {
       "email": "kshenukaishan@gmail.com",
       "password": "12345",
-      "id": 3
+      "id": 1
     }
   ]
 }

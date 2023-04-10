@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../assets/logo.png";
 import {
   StyledNavbar,
   LeftContainer,
@@ -18,7 +19,7 @@ const Navbar = () => {
     <StyledNavbar extendNavbar={extendNavbar}>
       <InnerStyledNavbar>
         <LeftContainer>
-          <h1>Logo</h1>
+          <img src={Logo} alt="" />
         </LeftContainer>
         <RightContainer>
           <NavbarLinkContainer>

@@ -2,26 +2,62 @@ import React, { useState } from "react";
 import {
   GlobalStyle,
   StyledButton,
-  StyledError,
   StyledForm,
   StyledFormWrapper,
   StyledInput,
 } from "../styled-components/Form.styled";
+import { NavbarLink } from "../styled-components/Navbar.styled";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const LOGIN_URL = process.env.REACT_APP_LOGIN_URL;
+
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    if (validate()) {
+      fetch(`${LOGIN_URL}` + email)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          if (Object.keys(data).length === 0) {
+            alert("Please enter registered email!");
+          } else {
+            if (data.password === password) {
+              navigate("/");
+            } else {
+              alert("please type the correct password!");
+            }
+          }
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    }
+  };
+
+  const validate = () => {
+    let result = true;
+    if (email === "" || email === null) {
+      result = false;
+      alert("Please enter an email");
+    }
+    if (password === "" || password === null) {
+      result = false;
+      alert("Please enter an password");
+    }
+    return result;
   };
 
   return (
     <>
       <GlobalStyle />
       <StyledFormWrapper>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleLogin}>
           <h1>Login</h1>
           <label htmlFor="email">Email</label>
           <StyledInput
@@ -37,10 +73,11 @@ const Login = () => {
             type="password"
             name="password"
           />
-          <StyledError>
-            <p>Error</p>
-          </StyledError>
           <StyledButton type="submit">Login</StyledButton>
+          <div>
+            <p>Don't have an account?</p>
+            <NavbarLink to={"/register"}>Register</NavbarLink>
+          </div>
         </StyledForm>
       </StyledFormWrapper>
     </>
